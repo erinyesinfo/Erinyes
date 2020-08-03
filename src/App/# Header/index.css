@@ -1,0 +1,110 @@
+/* Header */
+.headerHelper {
+    background: white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 20px 20px 15px;
+    z-index: 3;
+}
+.headerWrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 3;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color:white;
+    z-index: 3;
+}
+.header-logo {
+    width: 25px;
+}.header-logo:hover {
+    cursor: pointer;
+}.header-logo img {
+    width: 100%;
+}
+.header-navs {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+}
+.nav-menu {
+    color:white;
+    background: transparent;
+    height: 20px;
+    width: 30px;
+    border: 1px solid#262626;
+    border-radius: 3px;
+    cursor: pointer;
+}.nav-menu:hover { border: 1px solid #313131; }
+
+.header-navs-portfolio, .header-navs-about, .header-navs-projects, .header-navs-skills {
+    margin-bottom: 5px;
+}
+.header-navs-portfolio a, .header-navs-projects a, .header-navs-about a, .header-navs-skills a, .header-navs-contact a {
+    text-decoration: none;
+    color: #818182
+}.header-navs-portfolio a:hover, .header-navs-projects a:hover, .header-navs-about a:hover, .header-navs-skills a:hover, .header-navs-contact a:hover {
+    color: black;
+    cursor: pointer;
+}.active {
+    color: black;
+    border-bottom: 1px solid cornflowerblue;
+    cursor: default;
+}
+
+.header-copyright {
+    margin: 40px 0;
+    font-size: 13px;
+    text-align: center;
+    color: gray;
+}
+
+
+
+@media screen and (max-width: 576px) {
+    .headerHelper { padding: 0; }
+    .headerWrapper {
+        padding: 0;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: black;
+        padding: 10px 10px 5px 10px;
+    }
+    .logo-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .header-navs {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin: 10px 0 15px;
+    }
+    .header-navs-portfolio a, .header-navs-projects a, .header-navs-about a, .header-navs-skills a, .header-navs-contact a {
+        display: block;
+        width: 100%;
+    }.header-navs-portfolio a:hover, .header-navs-projects a:hover, .header-navs-about a:hover, .header-navs-skills a:hover, .header-navs-contact a:hover {
+        color: white;
+    }.header-navs-portfolio .active, .header-navs-projects .active, .header-navs-about .active, .header-navs-skills .active, .header-navs-contact .active {
+        color: cornflowerblue;
+    }
+    .active { border: none }
+}

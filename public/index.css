@@ -1,0 +1,55 @@
+/* netlify form */
+
+.index-netlify {
+    margin: -30px 40px 40px 40px;
+}
+.netlify-contact {
+    margin-bottom: 10px;
+    margin-top: -10px;
+    font-size: 15px;
+}
+.netlify-form {
+    display: grid;
+    gap: 10px;
+}
+.netlify-input-name {
+    padding: 7px;
+    border: 1px solid #eee;
+    background: #eee;
+}.netlify-input-name:hover { border: 1px solid rgb(209, 206, 206); }
+.netlify-input-name:focus { border: 1px solid bisque;background-color: #fff; }
+.netlify-input-email {
+    padding: 7px;
+    border: 1px solid #eee;
+    background: #eee;
+}.netlify-input-email:hover { border: 1px solid rgb(209, 206, 206); }
+.netlify-input-email:focus { border: 1px solid bisque;background-color: #fff; }
+.netlify-input-message {
+    padding: 7px;
+    border: 1px solid #eee;
+    background: #eee;
+    resize: vertical;
+}.netlify-input-message:hover { border: 1px solid rgb(209, 206, 206); }
+.netlify-input-message:focus { border: 1px solid bisque;background-color: #fff; }
+.netlify-btn {
+    color: #fff;
+    padding: 7px;
+    background-color: cadetblue;
+    border: 1px solid #eee;
+}.netlify-btn:hover {
+    background-color: rgb(85, 149, 151);
+    cursor: pointer;
+}.netlify-btn:active {
+    padding-left: 8px;
+    padding-top: 8px;
+}
+
+/* Footer */
+.footer {
+    padding: 15px;
+    text-align: center;
+    background: black;
+    color: white;
+    font-size: 13px;
+    font-weight: lighter;
+}
