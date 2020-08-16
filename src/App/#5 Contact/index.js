@@ -48,7 +48,7 @@ const Contact = () => {
                                     </div>
                                     <br />
                                     <div className='contact-us-more-git'>
-                                        <a href='https://github.com/erinyesinfo' target='blanc'>
+                                        <a rel="noopener noreferrer" href='https://github.com/erinyesinfo' target='_blank'>
                                             <Github />
                                         </a>
                                     </div>
@@ -58,7 +58,6 @@ const Contact = () => {
                                 <Shout />
                             </div>
                         </div>
-
                         <div>
                             <h4>OR</h4>
                             <div className='netlify-contact'>Contact us here via netlify</div>

@@ -166,3 +166,7 @@
     .projects-info { margin: 0; }
     .thirdPartyLibrary { margin-bottom: 20px; }
 }
+@media screen and (max-width: 537px) {
+    .button-slide-previous, .button-slide-next {
+        top: 90px; }
+}

@@ -37,8 +37,41 @@
     padding: 12px;
     margin: 15px 0;
     display: inline-flex;
+    cursor: pointer;
 }.portfolio-more:hover {
     border: 1px solid forestgreen;
     color: aquamarine;
+}
+.portfolio-patron {
+    background-color: transparent;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    -moz-transition: all 50ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    -ms-transition: all 50ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    -webkit-transition: all 50ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    -o-transition: all 50ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    transition: all 50ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    padding: 12px 24px;
+    margin-left: 20px;
+    border: 1px solid rgb(232, 91, 70);
+    border-radius: 1px;
+    box-sizing: border-box;
     cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}.portfolio-patron:hover {
+    color: aquamarine;
+    border-color: darkgreen;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 576px) {
+    .portfolio-more, .portfolio-patron {
+        padding: 12px 10px;
+        font-size: 13px;
+        font-family: sans-serif;
+    }.portfolio-patron { margin-left: 10px; }
 }

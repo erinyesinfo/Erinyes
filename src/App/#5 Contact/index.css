@@ -63,9 +63,3 @@
 @media screen and (max-width: 992px) {
     .contact-image { display: none; }
 }
-@media screen and (max-width: 576px) {
-    .contact-us-more-git {
-        display: flex;
-        justify-content: center; }
-}
-

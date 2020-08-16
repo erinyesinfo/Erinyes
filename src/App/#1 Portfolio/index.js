@@ -33,6 +33,11 @@ const Portfolio = () => {
                             More about me
                         </div>
                     </Link>
+                    <a className='portfolio-patron' rel="noopener noreferrer"
+                        href="https://www.patreon.com/bePatron?u=40714472" target='_blank'>
+                        Become a Patron!
+                    </a>
+                    <script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
                 </div>
             </div>
         </Element>
