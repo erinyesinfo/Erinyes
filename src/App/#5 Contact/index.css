@@ -53,13 +53,10 @@
 .contact-us-more-git a {
     color: black;
     font-size: 22px;
+    display: inline-flex;
+    margin-right: 10px;
 }.contact-us-more-git a:hover { padding-left: 0.5px;color: cornflowerblue; }
 .contact-us-more-git a svg {
     height: 25px;
     width: 25px;
-}
-.contact-image svg { width: 400px; }
-
-@media screen and (max-width: 992px) {
-    .contact-image { display: none; }
 }

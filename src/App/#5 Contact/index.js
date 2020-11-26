@@ -3,7 +3,7 @@ import { Element } from 'react-scroll';
 import './index.css';
 
 // icon
-import { Github, Shout } from './Icons';
+import { Github, Linkedin, Codepen, Medium, Shout } from './Icons';
 
 const Contact = () => {
     return (
@@ -51,12 +51,19 @@ const Contact = () => {
                                         <a rel="noopener noreferrer" href='https://github.com/erinyesinfo' target='_blank'>
                                             <Github />
                                         </a>
+                                        <a rel="noopener noreferrer" href='https://www.linkedin.com/in/ameretat-jig' target='_blank'>
+                                            <Linkedin />
+                                        </a>
+                                        <a rel="noopener noreferrer" href='https://codepen.io/jigsaw487' target='_blank'>
+                                            <Codepen />
+                                        </a>
+                                        <a rel="noopener noreferrer" href='https://jigsaw487.medium.com' target='_blank'>
+                                            <Medium />
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                            <div className='contact-image'>
-                                <Shout />
-                            </div>
+                            <Shout />
                         </div>
                         <div>
                             <h4>OR</h4>

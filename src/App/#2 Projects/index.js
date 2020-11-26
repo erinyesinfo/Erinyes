@@ -78,16 +78,16 @@ class Projects extends Component {
                             <div className='projects-innerContainer'>
                                 {/* title */}
                                 <div className='projects-title-3'>
-                                    Our Recent Completed Projects
+                                    Recent Completed Projects
                                 </div>
                                 {/* border projects */}
                                 <Carousel responsive={responsive} infinite={true}
-                                arrows={false} renderButtonGroupOutside={true}
+                                arrows={false} renderButtonGroupOutside={true} draggable={false}
                                 customButtonGroup={<ButtonGroup />}>
                                     <div className='projects-completed'>
                                         <div className='projects-image'>
                                             <a className="projects-image-slides" rel="noopener noreferrer"
-                                            href="https://mikta.netlify.app" target='_blank'>
+                                            href="https://mikta-v0.netlify.app" target='_blank'>
                                                 <LazyLoad image={{
                                                     className: 'mikta',
                                                     src: Mikta,
@@ -100,7 +100,7 @@ class Projects extends Component {
                                                 <a className='a-web' rel="noopener noreferrer" href="https://github.com/erinyesinfo/Mikta" target='_blank'>
                                                     <Github />
                                                 </a>
-                                                <a rel="noopener noreferrer" href="https://mikta.netlify.app" target='_blank'>
+                                                <a rel="noopener noreferrer" href="https://mikta-v0.netlify.app" target='_blank'>
                                                     <Globe />
                                                 </a>
                                             </div>                              

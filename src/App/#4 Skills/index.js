@@ -6,14 +6,15 @@ import './index.css';
 import { Html5, Css3, Bootstrap, JavaScript, JQuery, Reactjs, Reduxjs, Photoshope, Illustration, AfterEffects, Nodejs, MySQL, MongoDB, Git, Agile, Nextjs, Sass, CLanguage, Python, PHP } from './Icons';
 
 const Skills = () => {
+    const Theme = localStorage.getItem('theme') || null;
     return (
         <Element name="skills" className="element">
             <div className='skills'>
                 <div className='skills-title'>My Specialty</div>
                 <div className='skills-container'>
                     <div className='skills-whoAmI'>My Skills</div>
-                    <div className='skills-me'>
-                        My skills rely on front-end tasks like adobe products [ web design, logo design, vector design, motion effects ], especially react and redux, and more as you can see :)
+                    <div className={Theme ? 'skills-me-white':'skills-me'}>
+                        My skills rely on front-end tasks like adobe products [ web design, logo design, vector design, motion effects ], especially React and Redux, and more as you can see :)
                     </div>
                     <div className='skills-me-more'>
                         <div className='skills-strongest'>

@@ -1,6 +1,4 @@
-
-
-.about { margin: 80px 40px 40px 40px; }
+.about { margin: 80px 40px 40px 40px;position: relative; }
 .about-title {
     margin-bottom: 15px;
     display: block;
@@ -18,7 +16,7 @@
     margin-bottom: 4em;
 }
 .about-me { margin-bottom: 20px; }
-.about-me span { color: cornflowerblue; }
+.about-me span, .about-me-more span { color: cornflowerblue; }
 .about-contact-btn a {
     color: #fff;
     background-color: steelblue;

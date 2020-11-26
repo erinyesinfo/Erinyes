@@ -17,27 +17,27 @@
     border: 1px solid #eee;
     background: #eee;
 }.netlify-input-name:hover { border: 1px solid rgb(209, 206, 206); }
-.netlify-input-name:focus { border: 1px solid bisque;background-color: #fff; }
+.netlify-input-name:focus { border: 1px solid mediumslateblue;background-color: #fff; }
 .netlify-input-email {
     padding: 7px;
     border: 1px solid #eee;
     background: #eee;
 }.netlify-input-email:hover { border: 1px solid rgb(209, 206, 206); }
-.netlify-input-email:focus { border: 1px solid bisque;background-color: #fff; }
+.netlify-input-email:focus { border: 1px solid mediumslateblue;background-color: #fff; }
 .netlify-input-message {
     padding: 7px;
     border: 1px solid #eee;
     background: #eee;
     resize: vertical;
 }.netlify-input-message:hover { border: 1px solid rgb(209, 206, 206); }
-.netlify-input-message:focus { border: 1px solid bisque;background-color: #fff; }
+.netlify-input-message:focus { border: 1px solid mediumslateblue;background-color: #fff; }
 .netlify-btn {
     color: #fff;
     padding: 7px;
-    background-color: cadetblue;
+    background-color: darkslateblue;
     border: 1px solid #eee;
 }.netlify-btn:hover {
-    background-color: rgb(85, 149, 151);
+    background-color: rgb(58, 48, 128);
     cursor: pointer;
 }.netlify-btn:active {
     padding-left: 8px;
