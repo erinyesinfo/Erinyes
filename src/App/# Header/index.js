@@ -138,7 +138,7 @@ class Header extends Component {
                                 </Link>
                             </div>
                             {!this.state.matches576 ? (
-                                <div className='header-navs-color' onMouseEnter={this.handleShowTheme} onMouseLeave={this.handleCloseTheme}>
+                                <div className='header-navs-color' onClick={this.handleShowTheme} onMouseEnter={this.handleShowTheme} onMouseLeave={this.handleCloseTheme}>
                                     <img className='header-ColorBoilplate' src={ColorBoilplate} alt='ColorBoilplate' />
                                     {this.state.mouseEnter ? (
                                         <div className={this.state.Theme ? 'header-theme-black':'header-theme'} id='header-theme'>
