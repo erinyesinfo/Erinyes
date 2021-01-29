@@ -17,6 +17,10 @@
 }
 .about-me { margin-bottom: 20px; }
 .about-me span, .about-me-more span { color: cornflowerblue; }
+.about-me-more a {
+    color: cornflowerblue;
+    text-decoration: none;
+}.about-me-more a:hover { text-decoration: underline; }
 .about-contact-btn a {
     color: #fff;
     background-color: steelblue;

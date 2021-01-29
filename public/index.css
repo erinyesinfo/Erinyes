@@ -1,7 +1,7 @@
 /* netlify form */
 
 .index-netlify {
-    margin: -30px 40px 40px 40px;
+    margin: 0 40px 40px 40px;
 }
 .netlify-contact {
     margin-bottom: 10px;
@@ -16,12 +16,14 @@
     padding: 7px;
     border: 1px solid #eee;
     background: #eee;
+    outline: none;
 }.netlify-input-name:hover { border: 1px solid rgb(209, 206, 206); }
 .netlify-input-name:focus { border: 1px solid mediumslateblue;background-color: #fff; }
 .netlify-input-email {
     padding: 7px;
     border: 1px solid #eee;
     background: #eee;
+    outline: none;
 }.netlify-input-email:hover { border: 1px solid rgb(209, 206, 206); }
 .netlify-input-email:focus { border: 1px solid mediumslateblue;background-color: #fff; }
 .netlify-input-message {
@@ -29,13 +31,15 @@
     border: 1px solid #eee;
     background: #eee;
     resize: vertical;
+    outline: none;
 }.netlify-input-message:hover { border: 1px solid rgb(209, 206, 206); }
 .netlify-input-message:focus { border: 1px solid mediumslateblue;background-color: #fff; }
 .netlify-btn {
     color: #fff;
     padding: 7px;
     background-color: darkslateblue;
-    border: 1px solid #eee;
+    border: none;
+    outline: none;
 }.netlify-btn:hover {
     background-color: rgb(58, 48, 128);
     cursor: pointer;

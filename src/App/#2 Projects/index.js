@@ -87,7 +87,7 @@ class Projects extends Component {
                                     <div className='projects-completed'>
                                         <div className='projects-image'>
                                             <a className="projects-image-slides" rel="noopener noreferrer"
-                                            href="https://mikta-v0.netlify.app" target='_blank'>
+                                            href="https://mikta.netlify.app" target='_blank'>
                                                 <LazyLoad image={{
                                                     className: 'mikta',
                                                     src: Mikta,
@@ -100,15 +100,15 @@ class Projects extends Component {
                                                 <a className='a-web' rel="noopener noreferrer" href="https://github.com/erinyesinfo/Mikta" target='_blank'>
                                                     <Github />
                                                 </a>
-                                                <a rel="noopener noreferrer" href="https://mikta-v0.netlify.app" target='_blank'>
+                                                <a rel="noopener noreferrer" href="https://mikta.netlify.app" target='_blank'>
                                                     <Globe />
                                                 </a>
-                                            </div>                              
+                                            </div>
                                         </div>
                                         <div className='projects-info'>
                                             <div className='title'>Mikta</div>
                                             <div className='definition'>
-                                                Mikta is social app with the ability to let you read news and search images and post your story and your images, plus you can like photos, share posts, and collect images.
+                                                Mikta is a social app with more than <strong className="line-of-code">20k ReactJS line of code</strong> that let you create a user that has the ability to let you read the news, and search images, and post your story and your images, plus you can like photos, share posts, collect images, download images.
                                             </div>
                                             <div className='problems'>
                                                 <div className='problems-title'>Problems i faced</div>

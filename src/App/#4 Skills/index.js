@@ -14,7 +14,7 @@ const Skills = () => {
                 <div className='skills-container'>
                     <div className='skills-whoAmI'>My Skills</div>
                     <div className={Theme ? 'skills-me-white':'skills-me'}>
-                        My skills rely on front-end tasks like adobe products [ web design, logo design, vector design, motion effects ], especially React and Redux, and more as you can see :)
+                        More than 30 certificates in Udemy moreover my skills rely on front-end tasks like React.js and Redux.js, and more as you can see :)
                     </div>
                     <div className='skills-me-more'>
                         <div className='skills-strongest'>

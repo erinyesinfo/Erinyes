@@ -59,6 +59,7 @@
     margin-bottom: 10px;
 }
 .projects-info .definition span { color: gray;font-size: 14px; }
+.projects-info .definition .line-of-code { color: cornflowerblue }
 .problems-title {
     color:plum;
     font-size: 16px;
@@ -91,22 +92,22 @@
     width: 450px;
     border-radius: 1px;
     margin-bottom: 10px;
-}.projects-image .projects-image-slides .mikta:hover { border: 1px solid rgb(192, 185, 185); }
+}
 .projects-image .projects-image-slides .Bubblyfast {
     height: 300px;
     border-radius: 1px;
     margin-bottom: 10px;
-}.projects-image .projects-image-slides .Bubblyfast:hover { border: 1px solid rgb(192, 185, 185); }
+}
 .projects-image .projects-image-slides .hoomer {
     height: 300px;
     border-radius: 1px;
     margin-bottom: 10px;
-}.projects-image .projects-image-slides .hoomer:hover { border: 1px solid rgb(192, 185, 185); }
+}
 .projects-image .projects-image-slides .taski {
     width: 400px;
     border-radius: 1px;
     margin-bottom: 10px;
-}.projects-image .projects-image-slides .taski:hover { border: 1px solid rgb(192, 185, 185); }
+}
 .projects-image .socialMedia {
     display: flex;
     justify-content: center;

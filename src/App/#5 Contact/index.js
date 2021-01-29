@@ -51,13 +51,13 @@ const Contact = () => {
                                         <a rel="noopener noreferrer" href='https://github.com/erinyesinfo' target='_blank'>
                                             <Github />
                                         </a>
-                                        <a rel="noopener noreferrer" href='https://www.linkedin.com/in/ameretat-jig' target='_blank'>
+                                        <a rel="noopener noreferrer" href='https://www.linkedin.com/in/erin-yes' target='_blank'>
                                             <Linkedin />
                                         </a>
                                         <a rel="noopener noreferrer" href='https://codepen.io/jigsaw487' target='_blank'>
                                             <Codepen />
                                         </a>
-                                        <a rel="noopener noreferrer" href='https://jigsaw487.medium.com' target='_blank'>
+                                        <a rel="noopener noreferrer" href='https://erinyesinfo.medium.com' target='_blank'>
                                             <Medium />
                                         </a>
                                     </div>
