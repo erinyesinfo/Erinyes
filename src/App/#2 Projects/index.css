@@ -39,9 +39,7 @@
 }
 .innerNavs-react, .innerNavs-photoshop, .innerNavs-illustration { margin-right: 25px; }
 .projects-innerNavs .light { color: forestgreen; }
-.innerNavs-react, .innerNavs-react-redux {
-    cursor: pointer;
-}
+.innerNavs-react, .innerNavs-react-redux { cursor: pointer }
 .projects-innerNavs-navs {
     display: flex;
     justify-content: flex-start;
@@ -60,23 +58,34 @@
 }
 .projects-info .definition span { color: gray;font-size: 14px; }
 .projects-info .definition .line-of-code { color: cornflowerblue }
-.problems-title {
-    color:plum;
+.created-title {
+    color: lightseagreen;
     font-size: 16px;
     font-weight: 700;
     margin: 15px 0 5px;
 }
-.howISolvedThoseProblems-title {
-    color: forestgreen;
+.update-title {
+    color: cornflowerblue;
     font-size: 16px;
     font-weight: 700;
     margin: 10px 0 5px;
 }
-.thirdPartyLibrary.hoomer { margin-top: 15px; }
-.thirdPartyLibrary-title {
+.technologies.hoomer { margin-top: 15px; }
+.technologies-title {
+    color: slateblue;
     font-weight: 700;
     font-size: 16px;
     margin: 10px 0 5px;
+}
+.technology {
+    color: white;
+    background-color: dodgerblue;
+    display: inline-flex;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 .projects-image {
     display: flex;
@@ -114,6 +123,10 @@
     font-size: 30px;
 }
 .a-web { margin-right: 25px }
+.a-android {
+    width: 25px;
+    margin-left: 25px;
+}
 .projects-image .socialMedia a {
     color: black;
 }.projects-image .socialMedia a:hover {
@@ -126,31 +139,46 @@
 }
 
 /* Slider btns */
-.button-slide-previous {
+.arrow-curved.left {
+    margin-bottom: 20px;
     background-color: transparent;
     position: absolute;
-    top: 55px;
+    top: 20px;
+    z-index: 1000;
     left: 0;
-    width: 50px;
+    width: 34px;
+    height: 40px;
     border: none;
+    outline: none;
     cursor: pointer;
 }
-.button-slide-next {
+.arrow-curved.right {
+    margin-bottom: 20px;
     background-color: transparent;
     position: absolute;
-    top: 55px;
+    top: 20px;
+    z-index: 1000;
     right: 0;
-    width: 50px;
+    width: 34px;
+    height: 40px;
     border: none;
+    outline: none;
     cursor: pointer;
 }
 
 
+@media screen and (max-width: 1100px) {
+    .project-responsive {
+        display: flex;
+        flex-direction: column;
+    }
+}
 @media screen and (max-width: 992px) {
     .projects-completed { flex-direction: column; }
     .projects-navs-2 .arrow-curved {
         position: unset;
         margin-bottom: -15px; }
+    .projects-image .projects-image-slides { justify-content: center; }
     .projects-image .projects-image-slides .mikta, .projects-image .projects-image-slides .Bubblyfast, .projects-image .projects-image-slides .hoomer, .projects-image .projects-image-slides .taski {
         height: unset;
         width: 100%; }
@@ -165,9 +193,90 @@
         justify-content: space-between;
         font-size: 25px; }
     .projects-info { margin: 0; }
-    .thirdPartyLibrary { margin-bottom: 20px; }
+    .technologies { margin-bottom: 20px; }
 }
 @media screen and (max-width: 537px) {
-    .button-slide-previous, .button-slide-next {
-        top: 90px; }
+    .button-slide-previous, .button-slide-next { top: 90px; }
 }
+
+
+
+/*
+ *
+ * Animations
+ *
+*/
+
+/* referring directly to the animation's @keyframe declaration */
+.animate_infinity_completed_mouseIn {
+    display: inline-flex;
+    -webkit-animation: lightSpeedInLeft 2s infinite forwards;
+    -moz-animation: lightSpeedInLeft 2s infinite forwards;
+    -o-animation: lightSpeedInLeft 2s infinite forwards;
+    animation: lightSpeedInLeft 2s infinite forwards;
+}.animate_infinity_projects_mouseIn {
+    display: inline-flex;
+    -webkit-animation: flip 2s infinite forwards;
+    -moz-animation: flip 2s infinite forwards;
+    -o-animation: flip 2s infinite forwards;
+    animation: flip 2s infinite forwards;
+}
+
+.animate_infinity_mikta_mouseIn {
+    display: inline-flex;
+    -webkit-animation: wobble 2s infinite forwards;
+    -moz-animation: wobble 2s infinite forwards;
+    -o-animation: wobble 2s infinite forwards;
+    animation: wobble 2s infinite forwards;
+}.animate_infinity_bubblyfast_mouseIn {
+    display: inline-flex;
+    -webkit-animation: wobble 2s infinite forwards;
+    -moz-animation: wobble 2s infinite forwards;
+    -o-animation: wobble 2s infinite forwards;
+    animation: wobble 2s infinite forwards;
+}.animate_infinity_hoomer_mouseIn {
+    display: inline-flex;
+    -webkit-animation: wobble 2s infinite forwards;
+    -moz-animation: wobble 2s infinite forwards;
+    -o-animation: wobble 2s infinite forwards;
+    animation: wobble 2s infinite forwards;
+}.animate_infinity_taski_mouseIn {
+    display: inline-flex;
+    -webkit-animation: wobble 2s infinite forwards;
+    -moz-animation: wobble 2s infinite forwards;
+    -o-animation: wobble 2s infinite forwards;
+    animation: wobble 2s infinite forwards;
+}
+
+
+
+/* curved arrow infinite moves */
+/* .animate_left_slider {
+    -webkit-animation: left_arrow_slider linear .2s infinite alternate;
+    -moz-animation: left_arrow_slider linear .2s infinite alternate;
+    -o-animation: left_arrow_slider linear .2s infinite alternate;
+    animation: left_arrow_slider linear .2s infinite alternate;
+}.animate_right_slider {
+    -webkit-animation: right_arrow_slider linear .2s infinite alternate;
+    -moz-animation: right_arrow_slider linear .2s infinite alternate;
+    -o-animation: right_arrow_slider linear .2s infinite alternate;
+    animation: right_arrow_slider linear .2s infinite alternate;
+}
+
+@-webkit-keyframes left_arrow_slider {
+    0% { translate: 0; }
+    100% { translate: 5px; }
+}
+@keyframes left_arrow_slider {
+    0% { translate: 0; }
+    100% { translate: 5px; }
+}
+
+@-webkit-keyframes right_arrow_slider {
+    0% { translate: 0; }
+    100% { translate: 5px; }
+}
+@keyframes right_arrow_slider {
+    0% { translate: 0; }
+    100% { translate: 5px; }
+} */

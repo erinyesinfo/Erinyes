@@ -39,3 +39,46 @@
     cursor: pointer;
 }
 .about-container-2 { display: flex;flex-wrap: wrap;justify-content: center;margin-top: 25px; }
+
+
+
+/*
+ *
+ * Animations
+ *
+*/
+
+/* referring directly to the animation's @keyframe declaration */
+.animate_infinity_about_mouseIn {
+    display: inline-flex;
+    -webkit-animation: lightSpeedInLeft 2s infinite forwards;
+    -moz-animation: lightSpeedInLeft 2s infinite forwards;
+    -o-animation: lightSpeedInLeft 2s infinite forwards;
+    animation: lightSpeedInLeft 2s infinite forwards;
+}.animate_infinity_whoAmI_mouseIn {
+    display: inline-flex;
+    -webkit-animation: flip 2s infinite forwards;
+    -moz-animation: flip 2s infinite forwards;
+    -o-animation: flip 2s infinite forwards;
+    animation: flip 2s infinite forwards;
+}
+
+.animate_infinity_funny_mouseIn {
+    display: inline-flex;
+    -webkit-animation: tada 2s infinite forwards;
+    -moz-animation: tada 2s infinite forwards;
+    -o-animation: tada 2s infinite forwards;
+    animation: tada 2s infinite forwards;
+}.animate_infinity_smart_mouseIn {
+    display: inline-flex;
+    -webkit-animation: flash 2s infinite forwards;
+    -moz-animation: flash 2s infinite forwards;
+    -o-animation: flash 2s infinite forwards;
+    animation: flash 2s infinite forwards;
+}.animate_infinity_hardWorker_mouseIn {
+    display: inline-flex;
+    -webkit-animation: shakeX 2s infinite forwards;
+    -moz-animation: shakeX 2s infinite forwards;
+    -o-animation: shakeX 2s infinite forwards;
+    animation: shakeX 2s infinite forwards;
+}

@@ -47,7 +47,7 @@
 .skills-hr {
     width: 100%;
     position: absolute;
-    bottom: -8px;
+    bottom: -9px;
     left: -1px;
     color: deepskyblue;
 }
@@ -64,11 +64,91 @@
 .hr-react { width: 80%; }
 .hr-redux { width: 80%; }
 /* good but lack experiance */
+.hr-reactnative { width: 60%; }
 .hr-node { width: 60%; }
 .hr-mysql { width: 60%; }
+.hr-mongoDB { width: 60%; }
 .hr-git { width: 60%; }
+.hr-ejs { width: 80%; }
+.hr-pug { width: 80%; }
+.hr-hbs { width: 80%; }
+.hr-restapi { width: 60%; }
+.hr-graphql { width: 40%; }
 /* basics */
 .hr-c { width: 20%; }
 .hr-php { width: 20%; }
 .hr-python { width: 20%; }
-.hr-mongoDB { width: 20%; }
+.hr-linux { width: 20%; }
+
+
+
+/*
+ *
+ * Animations
+ *
+*/
+
+/* referring directly to the animation's @keyframe declaration */
+.animate_infinity_specialty_mouseIn {
+    display: inline-flex;
+    -webkit-animation: lightSpeedInLeft 2s infinite forwards;
+    -moz-animation: lightSpeedInLeft 2s infinite forwards;
+    -o-animation: lightSpeedInLeft 2s infinite forwards;
+    animation: lightSpeedInLeft 2s infinite forwards;
+}.animate_infinity_skills_mouseIn {
+    display: inline-flex;
+    -webkit-animation: flip 2s infinite forwards;
+    -moz-animation: flip 2s infinite forwards;
+    -o-animation: flip 2s infinite forwards;
+    animation: flip 2s infinite forwards;
+}
+.animate_infinity_heartBeat {
+    -webkit-animation: heartBeat 1s infinite forwards;
+    -moz-animation: heartBeat 1s infinite forwards;
+    -o-animation: heartBeat 1s infinite forwards;
+    animation: heartBeat 1s infinite forwards;
+}
+.animate_skills_description {
+    color: deepskyblue;
+    display: inline-flex;
+    -webkit-animation: jackInTheBox 2s infinite forwards;
+    -moz-animation: jackInTheBox 2s infinite forwards;
+    -o-animation: jackInTheBox 2s infinite forwards;
+    animation: jackInTheBox 2s infinite forwards;
+}
+.animate_infinity_strongest_mouseIn {
+    display: inline-flex;
+    -webkit-animation: wobble 1s infinite forwards;
+    -moz-animation: wobble 1s infinite forwards;
+    -o-animation: wobble 1s infinite forwards;
+    animation: wobble 1s infinite forwards;
+}.animate_infinity_good_mouseIn {
+    display: inline-flex;
+    -webkit-animation: wobble 2s infinite forwards;
+    -moz-animation: wobble 2s infinite forwards;
+    -o-animation: wobble 2s infinite forwards;
+    animation: wobble 2s infinite forwards;
+}.animate_infinity_basic_mouseIn {
+    display: inline-flex;
+    -webkit-animation: wobble 3s infinite forwards;
+    -moz-animation: wobble 3s infinite forwards;
+    -o-animation: wobble 3s infinite forwards;
+    animation: wobble 3s infinite forwards;
+}
+.animate_infinity_strongest_mouseIn_skill { 
+    color: lightseagreen;
+    -webkit-animation: rubberBand 0.8s infinite forwards;
+    -moz-animation: rubberBand 0.8s infinite forwards;
+    -o-animation: rubberBand 0.8s infinite forwards;
+    animation: rubberBand 0.8s infinite forwards;
+}.animate_infinity_good_mouseIn_skill {
+    -webkit-animation: swing 0.8s infinite forwards;
+    -moz-animation: swing 0.8s infinite forwards;
+    -o-animation: swing 0.8s infinite forwards;
+    animation: swing 0.8s infinite forwards;
+}.animate_infinity_basic_mouseIn_skill {
+    -webkit-animation: rubberBand 0.8s infinite forwards;
+    -moz-animation: rubberBand 0.8s infinite forwards;
+    -o-animation: rubberBand 0.8s infinite forwards;
+    animation: rubberBand 0.8s infinite forwards;
+}

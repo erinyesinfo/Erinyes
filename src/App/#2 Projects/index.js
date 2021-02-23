@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Element } from 'react-scroll';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import ButtonGroup from './Slider';
+import Slider from "react-slick";
 import './index.css';
 
 /*
@@ -18,7 +16,7 @@ import Taski from './Images/Taski.png';// todo app
 import BG_preview from './Images/BG';// BG
 
 // icons
-import { Globe, Github } from './Icons';
+import { LeftCurved, RightCurved, Globe, Github, Android } from './Icons';
 
 /* helper */
 import LazyLoad from '../ThirdParty-Library/LazyLoad';
@@ -27,7 +25,9 @@ class Projects extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            matches992: window.matchMedia("(max-width: 992px)").matches
+            matches1100: window.matchMedia("(max-width: 1100px)").matches,
+            matches992: window.matchMedia("(max-width: 992px)").matches,
+            mouseInAnimate: ''
         };
     };
     UNSAFE_componentWillMount() {
@@ -40,238 +40,291 @@ class Projects extends Component {
         window.removeEventListener('load', this.handler992);
         window.removeEventListener('scroll', this.handler992);
     };
-    handler992 = () => this.setState({ matches992: window.innerWidth <= 992 });
+    handler992 = () => this.setState({ matches1100: window.innerWidth <= 1100, matches992: window.innerWidth <= 992 });
+    handleMouseIn = name => this.setState({ mouseInAnimate: name })
     render() {
-        const { matches992 } = this.state;
+        const { mouseInAnimate, matches1100, matches992 } = this.state;
         let miktaInlineStyle = { height: '460px', width: '450px' };
-        let bubblyfastInlineStyle = { height: '300px', width: 'unset' };
-        let hoomerInlineStyle = { height: '300px', width: 'unset' };
+        let bubblyfastInlineStyle = { height: matches1100 ? 'unset':'300px', width: matches1100? '100%':'unset' };
+        let hoomerInlineStyle = { height: matches1100 ? 'unset':'300px', width: matches1100 ? '100%':'unset' };
         let taskiInlineStyle = { height: 'unset', width: '400px' };
         let inlineStyling = {};
         if (matches992) { inlineStyling = { height: 'unset', width: '100%' }; }
-        const responsive = {
-            superLargeDesktop: {
-              // the naming can be any, depends on you.
-              breakpoint: { max: 4000, min: 3000 },
-              items: 1
-            },
-            desktop: {
-              breakpoint: { max: 3000, min: 1024 },
-              items: 1
-            },
-            tablet: {
-              breakpoint: { max: 1024, min: 464 },
-              items: 1
-            },
-            mobile: {
-              breakpoint: { max: 464, min: 0 },
-              items: 1
-            }
+        let settings = {
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight: true, // help remove other slider height
+            nextArrow: <RightCurved />,
+            prevArrow: <LeftCurved />
         };
         return (
             <Element name="projects" className="element">
                 <div className='projects-helper'>
                     <div className='projects'>
-                        <div className='projects-title'>Completed</div>
+                        <div className='projects-title' onMouseEnter={() => this.handleMouseIn('completed')} onMouseLeave={() => this.handleMouseIn('')}>
+                            <div className={mouseInAnimate === 'completed' ? 'animate_infinity_completed_mouseIn':''}>
+                                Completed
+                            </div>
+                        </div>
                         <div className='projects-container'>
-                            <div className='projects-title-2'>Projects</div>
+                            <div className='projects-title-2' onMouseEnter={() => this.handleMouseIn('projects')} onMouseLeave={() => this.handleMouseIn('')}>
+                                <div className={mouseInAnimate === 'projects' ? 'animate_infinity_projects_mouseIn':''}>
+                                    Projects
+                                </div>
+                            </div>
                             <div className='projects-innerContainer'>
                                 {/* title */}
-                                <div className='projects-title-3'>
-                                    Recent Completed Projects
-                                </div>
+                                <div className='projects-title-3'>Recent Completed Projects</div>
                                 {/* border projects */}
-                                <Carousel responsive={responsive} infinite={true}
-                                arrows={false} renderButtonGroupOutside={true} draggable={false}
-                                customButtonGroup={<ButtonGroup />}>
-                                    <div className='projects-completed'>
-                                        <div className='projects-image'>
-                                            <a className="projects-image-slides" rel="noopener noreferrer"
-                                            href="https://mikta.netlify.app" target='_blank'>
-                                                <LazyLoad image={{
-                                                    className: 'mikta',
-                                                    src: Mikta,
-                                                    alt: 'Mikta',
-                                                    placeholder: BG_preview,
-                                                    style: matches992 ? inlineStyling:miktaInlineStyle
-                                                }}/>
-                                            </a>
-                                            <div className='socialMedia'>
-                                                <a className='a-web' rel="noopener noreferrer" href="https://github.com/erinyesinfo/Mikta" target='_blank'>
-                                                    <Github />
+                                <Slider {...settings}>
+                                    {/* 1 */}
+                                    <div>
+                                        <div className='projects-completed'>
+                                            <div className='projects-image'>
+                                                <a className="projects-image-slides" rel="noopener noreferrer"
+                                                href="https://mikta.netlify.app" target='_blank'>
+                                                    <LazyLoad image={{
+                                                        className: 'mikta',
+                                                        src: Mikta,
+                                                        alt: 'Mikta',
+                                                        placeholder: BG_preview,
+                                                        style: matches992 ? inlineStyling:miktaInlineStyle
+                                                    }}/>
                                                 </a>
-                                                <a rel="noopener noreferrer" href="https://mikta.netlify.app" target='_blank'>
-                                                    <Globe />
-                                                </a>
+                                                <div className='socialMedia'>
+                                                    <a className='a-web' rel="noopener noreferrer" href="https://github.com/erinyesinfo/Mikta" target='_blank'>
+                                                        <Github />
+                                                    </a>
+                                                    <a rel="noopener noreferrer" href="https://mikta.netlify.app" target='_blank'>
+                                                        <Globe />
+                                                    </a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className='projects-info'>
-                                            <div className='title'>Mikta</div>
-                                            <div className='definition'>
-                                                Mikta is a social app with more than <strong className="line-of-code">20k ReactJS line of code</strong> that let you create a user that has the ability to let you read the news, and search images, and post your story and your images, plus you can like photos, share posts, collect images, download images.
-                                            </div>
-                                            <div className='problems'>
-                                                <div className='problems-title'>Problems i faced</div>
-                                                <ul>
-                                                    <li>connect to hackernews api</li>
-                                                    <li>comment to each post</li>
-                                                    <li>ability to collect photos</li>
-                                                </ul>
-                                            </div>
-                                            <div className='howISolvedThoseProblems'>
-                                                <div className='howISolvedThoseProblems-title'>How I Solved Those Problems</div>
-                                                <ul>
-                                                    <li>i did some research and found tricky ways to make it work</li>
-                                                    <li>it toke me sometime to find out that i needed to make a condition if statement with the correct id</li>
-                                                    <li>well it is long and complicated, i got it with a nasty long conditions if, else statement</li>
-                                                </ul>
-                                            </div>
-                                            <div className='thirdPartyLibrary'>
-                                                <div className='thirdPartyLibrary-title'>Third Party Library</div>
-                                                <ul>
-                                                    <li>uuid</li>
-                                                    <li>axios</li>
-                                                    <li>LazyImage(react-image)</li>
-                                                    <li>react-images-uploading</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='projects-completed'>
-                                        <div className='projects-image'>
-                                            <a className="projects-image-slides" rel="noopener noreferrer"
-                                            href="https://bubblyfast.netlify.app" target='_blank'>
-                                                <LazyLoad image={{
-                                                    className: 'Bubblyfast',
-                                                    src: Bubblyfast,
-                                                    alt: 'Bubblyfast',
-                                                    placeholder: BG_preview,
-                                                    style: matches992 ? inlineStyling:bubblyfastInlineStyle
-                                                }}/>
-                                            </a>
-                                            <div className='socialMedia'>
-                                                <a className='a-web' rel="noopener noreferrer" href="https://github.com/erinyesinfo/Bubblyfast" target='_blank'>
-                                                    <Github />
-                                                </a>
-                                                <a rel="noopener noreferrer" href="https://bubblyfast.netlify.app" target='_blank'>
-                                                    <Globe />
-                                                </a>
-                                            </div>                              
-                                        </div>
-                                        <div className='projects-info'>
-                                            <div className='title'>bubblyfast</div>
-                                            <div className='definition'>
-                                                bubblyfast is a fun and colorful arcade puzzle game, Don't miss out on this fun relaxing game!
-                                            </div>
-                                            <div className='thirdPartyLibrary hoomer'>
-                                                <div className='thirdPartyLibrary-title'>Third Party Library</div>
-                                                <ul>
-                                                    <li>uuid</li>
-                                                    <li>axios</li>
-                                                    <li>sanitize-html</li>
-                                                    <li>universal-cookie</li>
-                                                    <li>redux</li>
-                                                    <li>react-redux</li>
-                                                    <li>redux-form, redux-thunk</li>
-                                                    <li>delay</li>
-                                                </ul>
+                                            <div className='projects-info'>
+                                                <div className='title' onMouseEnter={() => this.handleMouseIn('mikta')} onMouseLeave={() => this.handleMouseIn('')}>
+                                                    <div className={mouseInAnimate === 'mikta' ? 'animate_infinity_mikta_mouseIn':''}>
+                                                        Mikta
+                                                    </div>
+                                                </div>
+                                                <div className='definition'>
+                                                    Mikta is a social app with more than <strong className="line-of-code">20k ReactJS line of code</strong> that let you create a user that has the ability to let you read the news, and search images, and post your story and your images, plus you can like photos, share posts, collect images, download images.
+                                                </div>
+                                                <div className='created'>
+                                                    <div className='created-title'>Created</div>
+                                                    <div>16 December 2019</div>
+                                                </div>
+                                                <div className='update'>
+                                                    <div className='update-title'>Last Update</div>
+                                                    <div>8 February 2021</div>
+                                                </div>
+                                                <div className='technologies'>
+                                                    <div className='technologies-title'>Technologies</div>
+                                                    <div className='technology'>react</div>
+                                                    <div className='technology'>react-scroll</div>
+                                                    <div className='technology'>react-image</div>
+                                                    <div className='technology'>react-images-uploading</div>
+                                                    <div className='technology'>react-redux</div>
+                                                    <div className='technology'>redux</div>
+                                                    <div className='technology'>redux-form</div>
+                                                    <div className='technology'>redux-thunk</div>
+                                                    <div className='technology'>axios</div>
+                                                    <div className='technology'>uuid</div>
+                                                    <div className='technology'>zxcvbn</div>
+                                                    <div className='technology'>universal-cookie</div>
+                                                    <div className='technology'>node</div>
+                                                    <div className='technology'>nodemon</div>
+                                                    <div className='technology'>cors</div>
+                                                    <div className='technology'>helmet</div>
+                                                    <div className='technology'>express</div>
+                                                    <div className='technology'>express-session</div>
+                                                    <div className='technology'>ejs</div>
+                                                    <div className='technology'>dotenv</div>
+                                                    <div className='technology'>bcryptjs</div>
+                                                    <div className='technology'>sanitize-html</div>
+                                                    <div className='technology'>validator</div>
+                                                    <div className='technology'>connect-mongo</div>
+                                                    <div className='technology'>mongodb</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='projects-completed'>
-                                        <div className='projects-image'>
-                                            <a className="projects-image-slides" rel="noopener noreferrer"
-                                            href="https://hoomer.netlify.app" target='_blank'>
-                                                <LazyLoad image={{
-                                                    className: 'hoomer',
-                                                    src: Hoomer,
-                                                    alt: 'Hoomer',
-                                                    placeholder: BG_preview,
-                                                    style: matches992 ? inlineStyling:hoomerInlineStyle
-                                                }}/>
-                                            </a>
-                                            <div className='socialMedia'>
-                                                <a className='a-web' rel="noopener noreferrer" href="https://github.com/erinyesinfo/Hoomer" target='_blank'>
-                                                    <Github />
+                                    {/* 2 */}
+                                    <div>
+                                        <div className={matches1100 ? 'projects-completed project-responsive':'projects-completed'}>
+                                            <div className='projects-image'>
+                                                <a className="projects-image-slides" rel="noopener noreferrer"
+                                                href="https://bubblyfast.netlify.app" target='_blank'>
+                                                    <LazyLoad image={{
+                                                        className: 'Bubblyfast',
+                                                        src: Bubblyfast,
+                                                        alt: 'Bubblyfast',
+                                                        placeholder: BG_preview,
+                                                        style: matches992 ? inlineStyling:bubblyfastInlineStyle
+                                                    }}/>
                                                 </a>
-                                                <a rel="noopener noreferrer" href="https://hoomer.netlify.app" target='_blank'>
-                                                    <Globe />
-                                                </a>
-                                            </div>                              
-                                        </div>
-                                        <div className='projects-info'>
-                                            <div className='title'>Hoomer</div>
-                                            <div className='definition'>
-                                                Hoomer is a place to read articles on the Internet. Hoomer is a blogging platform, like Wordpress or Blogger. Hoomer is chaotically, arrhythmically produced by a combination of top-notch editors.
+                                                <div className='socialMedia'>
+                                                    <a className='a-web' rel="noopener noreferrer" href="https://github.com/erinyesinfo/Bubblyfast" target='_blank'>
+                                                        <Github />
+                                                    </a>
+                                                    <a rel="noopener noreferrer" href="https://bubblyfast.netlify.app" target='_blank'>
+                                                        <Globe />
+                                                    </a>
+                                                    <a className='a-android' rel="noopener noreferrer" href="https://expo.io/@erinyes/bubblyfast" target='_blank'>
+                                                        <Android />
+                                                    </a>
+                                                </div>                              
                                             </div>
-                                            <div className='thirdPartyLibrary hoomer'>
-                                                <div className='thirdPartyLibrary-title'>Third Party Library</div>
-                                                <ul>
-                                                    <li>uuid</li>
-                                                    <li>react-router-dom</li>
-                                                    <li>react-ckeditor-component</li>
-                                                    <li>sanitize-html</li>
-                                                    <li>react-html-parser</li>
-                                                    <li>html-word-count, react-scroll</li>
-                                                    <li>react-images-uploading</li>
-                                                </ul>
+                                            <div className='projects-info'>
+                                                <div className='title' onMouseEnter={() => this.handleMouseIn('bubblyfast')} onMouseLeave={() => this.handleMouseIn('')}>
+                                                    <div className={mouseInAnimate === 'bubblyfast' ? 'animate_infinity_bubblyfast_mouseIn':''}>
+                                                        bubblyfast
+                                                    </div>
+                                                </div>
+                                                <div className='definition'>
+                                                    bubblyfast is a fun and colorful arcade puzzle game, Don't miss out on this fun relaxing game!
+                                                </div>
+                                                <div className='created'>
+                                                    <div className='created-title'>Created</div>
+                                                    <div>23 September 2019</div>
+                                                </div>
+                                                <div className='update'>
+                                                    <div className='update-title'>Last Update</div>
+                                                    <div>15 February 2021</div>
+                                                </div>
+                                                <div className='technologies hoomer'>
+                                                    <div className='technologies-title'>Technologies</div>
+                                                    <div className='technology'>react</div>
+                                                    <div className='technology'>react-lazy-load-image-component</div>
+                                                    <div className='technology'>react-redux</div>
+                                                    <div className='technology'>redux</div>
+                                                    <div className='technology'>redux-thunk</div>
+                                                    <div className='technology'>axios</div>
+                                                    <div className='technology'>uuid</div>
+                                                    <div className='technology'>universal-cookie</div>
+                                                    <div className='technology'>node</div>
+                                                    <div className='technology'>nodemon</div>
+                                                    <div className='technology'>cors</div>
+                                                    <div className='technology'>helmet</div>
+                                                    <div className='technology'>express</div>
+                                                    <div className='technology'>express-session</div>
+                                                    <div className='technology'>ejs</div>
+                                                    <div className='technology'>dotenv</div>
+                                                    <div className='technology'>bcryptjs</div>
+                                                    <div className='technology'>sanitize-html</div>
+                                                    <div className='technology'>validator</div>
+                                                    <div className='technology'>connect-mongo</div>
+                                                    <div className='technology'>mongodb</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='projects-completed'>
-                                        <div className='projects-image'>
-                                            <a className="projects-image-slides" rel="noopener noreferrer"
-                                            href="https://taski.netlify.app" target='_blank'>
-                                                <LazyLoad image={{
-                                                    className: 'taski',
-                                                    src: Taski,
-                                                    alt: 'Taski',
-                                                    placeholder: BG_preview,
-                                                    style: matches992 ? inlineStyling:taskiInlineStyle
-                                                }}/>
-                                            </a>
-                                            <div className='socialMedia'>
-                                                <a className='a-web' rel="noopener noreferrer" href="https://github.com/erinyesinfo/Taski" target='_blank'>
-                                                    <Github />
+                                    {/* 3 */}
+                                    <div>
+                                        <div className={matches1100 ? 'projects-completed project-responsive':'projects-completed'}>
+                                            <div className='projects-image'>
+                                                <a className="projects-image-slides" rel="noopener noreferrer"
+                                                href="https://hoomer.netlify.app" target='_blank'>
+                                                    <LazyLoad image={{
+                                                        className: 'hoomer',
+                                                        src: Hoomer,
+                                                        alt: 'Hoomer',
+                                                        placeholder: BG_preview,
+                                                        style: matches992 ? inlineStyling:hoomerInlineStyle
+                                                    }}/>
                                                 </a>
-                                                <a rel="noopener noreferrer" href="https://taski.netlify.app" target='_blank'>
-                                                    <Globe />
-                                                </a>
+                                                <div className='socialMedia'>
+                                                    <a className='a-web' rel="noopener noreferrer" href="https://github.com/erinyesinfo/Hoomer" target='_blank'>
+                                                        <Github />
+                                                    </a>
+                                                    <a rel="noopener noreferrer" href="https://hoomer.netlify.app" target='_blank'>
+                                                        <Globe />
+                                                    </a>
+                                                </div>                              
+                                            </div>
+                                            <div className='projects-info'>
+                                                <div className='title' onMouseEnter={() => this.handleMouseIn('hoomer')} onMouseLeave={() => this.handleMouseIn('')}>
+                                                    <div className={mouseInAnimate === 'hoomer' ? 'animate_infinity_hoomer_mouseIn':''}>
+                                                        Hoomer
+                                                    </div>
+                                                </div>
+                                                <div className='definition'>
+                                                    Hoomer is a place to read articles on the Internet. Hoomer is a blogging platform, like Wordpress or Blogger. Hoomer is chaotically, arrhythmically produced by a combination of top-notch editors.
+                                                </div>
+                                                <div className='created'>
+                                                    <div className='created-title'>Created</div>
+                                                    <div>5 April 2020</div>
+                                                </div>
+                                                <div className='update'>
+                                                    <div className='update-title'>Last Update</div>
+                                                    <div>28 July 2020</div>
+                                                </div>
+                                                <div className='technologies hoomer'>
+                                                    <div className='technologies-title'>Technologies</div>
+                                                    <div className='technology'>uuid</div>
+                                                    <div className='technology'>react</div>
+                                                    <div className='technology'>react-scroll</div>
+                                                    <div className='technology'>react-html-parser</div>
+                                                    <div className='technology'>react-ckeditor-component</div>
+                                                    <div className='technology'>react-images-uploading</div>
+                                                    <div className='technology'>html-word-count</div>
+                                                    <div className='technology'>sanitize-html</div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className='projects-info'>
-                                            <div className='title'>Taski</div>
-                                            <div className='definition'>
-                                                Taski is todo app with the ability to add, update, read, toggle(complete), delete, plus restore deleted todos. And bonus the ability to change the background color.
-                                            </div>
-                                            <div className='problems'>
-                                                <div className='problems-title'>Problems i faced</div>
-                                                <ul>
-                                                    <li>update todo</li>
-                                                    <li>add pop up message</li>
-                                                    <li>move every completed todo to last array index</li>
-                                                    <li>restore todo, todos, plus handle duplicate, completed todos</li>
-                                                </ul>
-                                            </div>
-                                            <div className='howISolvedThoseProblems'>
-                                                <div className='howISolvedThoseProblems-title'>How I Solved Those Problems</div>
-                                                <ul>
-                                                    <li>i use todo-id to get todo and the new todo to replace old todo based on id</li>
-                                                    <li>using setTimeout</li>
-                                                    <li>i got the answer from stackoverflow</li>
-                                                    <li>i have learned a lot about arrays</li>
-                                                </ul>
-                                            </div>
-                                            <div className='thirdPartyLibrary'>
-                                                <div className='thirdPartyLibrary-title'>Third Party Library</div>
-                                                <ul>
-                                                    <li>uuid</li>
-                                                    <li>Css transition(react-transition-group)</li>
-                                                </ul>
-                                            </div>
                                     </div>
+                                    {/* 4 */}
+                                    <div>
+                                        <div className='projects-completed'>
+                                            <div className='projects-image'>
+                                                <a className="projects-image-slides" rel="noopener noreferrer"
+                                                href="https://taski.netlify.app" target='_blank'>
+                                                    <LazyLoad image={{
+                                                        className: 'taski',
+                                                        src: Taski,
+                                                        alt: 'Taski',
+                                                        placeholder: BG_preview,
+                                                        style: matches992 ? inlineStyling:taskiInlineStyle
+                                                    }}/>
+                                                </a>
+                                                <div className='socialMedia'>
+                                                    <a className='a-web' rel="noopener noreferrer" href="https://github.com/erinyesinfo/Taski" target='_blank'>
+                                                        <Github />
+                                                    </a>
+                                                    <a rel="noopener noreferrer" href="https://taski.netlify.app" target='_blank'>
+                                                        <Globe />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div className='projects-info'>
+                                                <div className='title' onMouseEnter={() => this.handleMouseIn('taski')} onMouseLeave={() => this.handleMouseIn('')}>
+                                                    <div className={mouseInAnimate === 'taski' ? 'animate_infinity_taski_mouseIn':''}>
+                                                        Taski
+                                                    </div>
+                                                </div>
+                                                <div className='definition'>
+                                                    Taski is todo app with the ability to add, update, read, toggle(complete), delete, plus restore deleted todos. And bonus the ability to change the background color.
+                                                </div>
+                                                <div className='created'>
+                                                    <div className='created-title'>Created</div>
+                                                    <div>23 March 2019</div>
+                                                </div>
+                                                <div className='update'>
+                                                    <div className='update-title'>Last Update</div>
+                                                    <div>18 February 2020</div>
+                                                </div>
+                                                <div className='technologies'>
+                                                    <div className='technologies-title'>Technologies</div>
+                                                    <div className='technology'>react</div>
+                                                    <div className='technology'>react-transition-group</div>
+                                                    <div className='technology'>semantic-ui-css</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </Carousel>
+                                </Slider>
                             </div>
                         </div>
                     </div>
